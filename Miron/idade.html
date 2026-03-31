@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Miron</title>
+</head>
+<body id="body">
+    <header><a href="../index.html" id="header-top"></a></header>
+    <main>
+        <a href="../index.html" id="botao-voltar">◀</a>
+        <form action="">
+            <label for="">Data da Avaliação</label>
+            <div id="grupo-avaliacao">
+                <label for="dia-avaliacao">Dia</label>
+                <input id="dia-avaliacao" type="number">
+                <label for="mes-avaliacao">Mês</label>
+                <input id="mes-avaliacao" type="number">
+                <label for="ano-avaliacao">Ano</label>
+                <input id="ano-avaliacao" type="number">
+            </div>
+
+            <label for="">Data da Nascimento</label>
+            <div id="grupo-nascimento">
+                <label for="dia-nascimento">Dia</label>
+                <input id="dia-nascimento" type="number">
+                <label for="mes-nascimento">Mês</label>
+                <input id="mes-nascimento" type="number">
+                <label for="ano-nascimento">Ano</label>
+                <input id="ano-nascimento" type="number">
+            </div>
+
+            <div id="grupo-bissexto" class="bissexto">
+                <label for="ano-bissexto">Levar em consideração ano bissexto?</label>
+                <input id="ano-bissexto" type="checkbox">
+            </div>
+        </form>
+
+        <button onclick="calcularIdade()">Calcular</button>
+        <span>Idade Milesimal</span><br>
+        <span id="idade-real" class="resultado"></span>
+    </main>
+</body>
+<script src="../script.js"></script>
+</html>
