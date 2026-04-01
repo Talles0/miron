@@ -165,22 +165,6 @@ button:active {
     transform: scale(1.02);
 }
 
-/* Responsividade */
-@media (max-width: 480px) {
-    main {
-        padding: 1.5rem;
-    }
-
-    form div:not(.bissexto) {
-        gap: 0.75rem;
-    }
-
-    input[type="number"] {
-        width: 4.2rem;
-        padding: 0.5rem 0.2rem;
-    }
-}
-
 /* ============================================
    Página de módulos – versão com verde pastel
    ============================================ */
@@ -239,4 +223,150 @@ button:active {
     margin-top: 30px;
     margin-bottom: -10px;
     font-size: 12px;
+}
+
+/* ============================================
+   MEDIA QUERIES – OTIMIZAÇÃO PARA CELULARES
+   ============================================ */
+
+/* Para telas até 480px (celulares em retrato) */
+@media (max-width: 480px) {
+    main {
+        padding: 1.5rem;
+        border-radius: 1.5rem;
+    }
+
+    form div:not(.bissexto) {
+        gap: 0.75rem;
+        padding: 0.3rem;
+    }
+
+    input[type="number"] {
+        width: 4.2rem;
+        padding: 0.5rem 0.2rem;
+        font-size: 0.85rem;
+    }
+
+    .bissexto {
+        gap: 0.8rem;
+        padding: 0.6rem;
+    }
+
+    input[type="checkbox"] {
+        width: 1.4rem;
+        height: 1.4rem;  /* maior para toque */
+    }
+
+    button {
+        padding: 0.85rem;
+        font-size: 1rem;
+    }
+
+    .resultado {
+        font-size: 1.8rem;
+        padding: 0.3rem 1rem;
+    }
+
+    /* Ajustes para a lista de módulos */
+    .modulo-div a {
+        padding: 0.9rem;
+        font-size: 1rem;
+    }
+
+    #modulos-titulo span {
+        font-size: 1.5rem;
+    }
+}
+
+/* Para telas muito pequenas (≤380px) – empilha os campos */
+@media (max-width: 380px) {
+    form div:not(.bissexto) {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.4rem;
+    }
+
+    form div:not(.bissexto) label {
+        margin-bottom: 0.2rem;
+    }
+
+    input[type="number"] {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .bissexto {
+        justify-content: center;
+        gap: 0.6rem;
+    }
+
+    .resultado {
+        font-size: 1.6rem;
+        display: block;
+        text-align: center;
+    }
+
+    #rodape {
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
+/* Para telas em modo paisagem em celulares */
+@media (max-width: 850px) and (orientation: landscape) {
+    main {
+        padding: 1.2rem;
+    }
+
+    form div:not(.bissexto) {
+        gap: 0.5rem;
+    }
+
+    input[type="number"] {
+        width: 4rem;
+    }
+
+    button {
+        padding: 0.7rem;
+    }
+}
+/* ============================================
+   AJUSTES PARA CELULAR – GRUPOS DE AVALIAÇÃO E NASCIMENTO
+   ============================================ */
+
+/* Para telas até 480px (celulares em retrato) */
+@media (max-width: 480px) {
+    /* ... mantenha as regras anteriores ... */
+
+    /* Faz com que cada grupo (dia, mês, ano) fique empilhado verticalmente */
+    form div:not(.bissexto) {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.3rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Ajusta o label para ficar acima do input */
+    form div:not(.bissexto) label {
+        margin-bottom: 0.2rem;
+        margin-right: 0; /* remove margem lateral */
+        font-size: 0.9rem;
+    }
+
+    /* Input ocupa toda a largura disponível */
+    input[type="number"] {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+}
+
+/* Para telas muito pequenas (≤380px) – mantém o empilhamento já definido acima */
+@media (max-width: 380px) {
+    /* ... outras regras podem permanecer ... */
+    /* O empilhamento já foi aplicado na regra de 480px, então aqui só ajustamos espaços extras se necessário */
+    form div:not(.bissexto) {
+        gap: 0.2rem;
+    }
 }
