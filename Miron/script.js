@@ -1,4 +1,5 @@
 document.getElementById("header-top").innerHTML = "Miron Calculador"
+document.getElementById("title").innerHTML = "Miron Calculador"
 
 function erro(){
     window.location.reload()
@@ -64,16 +65,19 @@ function calcularIdade(){
 }
 }
 
-// function calcularImc() {
-//     var peso = Number(document.getElementById("peso").value);
-//     var altura = Number(document.getElementById("altura").value);
+function calcularImc() {
 
-//     // Verifica se os valores são números válidos e positivos
-//     if (isNaN(peso) || isNaN(altura) || peso <= 0 || altura <= 0) {
-//         document.getElementById("imc-resultado").innerHTML = "Por favor, insira peso e altura válidos (positivos).";
-//         return;
-//     }
+    var peso
+    peso = Number(document.getElementById("peso").value);
+    var altura
+    altura = Number(document.getElementById("altura").value);
 
-//     var imc = peso / Math.pow(altura, 2);
-//     document.getElementById("imc-resultado").innerHTML = imc.toFixed(2);
-// }
+    // Verifica se os valores são números válidos e positivos
+    if (isNaN(peso) || isNaN(altura) || peso <= 0 || altura <= 0) {
+        document.getElementById("imc-resultado").innerHTML = "Por favor, insira peso e altura válidos (positivos).";
+        return;
+    }
+
+    var imc = peso / Math.pow(altura, 2);
+    document.getElementById("imc-resultado").innerHTML = imc.toFixed(2);
+}

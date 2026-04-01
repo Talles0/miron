@@ -234,3 +234,9 @@ button:active {
 .modulo-div a:hover {
     color: #009c4f;
 }
+#rodape {
+    text-align: end;
+    margin-top: 30px;
+    margin-bottom: -10px;
+    font-size: 12px;
+}
